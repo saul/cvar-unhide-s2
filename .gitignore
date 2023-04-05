@@ -1,0 +1,8 @@
+.vs
+*.user
+Debug/
+Release/
+x64/
+*.dll
+hl2sdk/
+addons/
