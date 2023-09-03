@@ -5,7 +5,7 @@
 ICvar* g_pCVar = NULL;
 CreateInterfaceFn g_pfnServerCreateInterface = NULL;
 
-extern ConCommandDesc_t cvar_unhide;
+extern ConCommand cvar_unhide;
 
 typedef bool (*AppSystemConnectFn)(IAppSystem* appSystem, CreateInterfaceFn factory);
 static AppSystemConnectFn g_pfnServerConfigConnect = NULL;
