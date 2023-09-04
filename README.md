@@ -4,7 +4,8 @@
 
 A Source 2 plugin to reveal all console variables and commands that are marked as hidden or development-only in Counter-Strike 2.
 
-> Important: You must add `-insecure` to Counter-Strike's launch options for this plugin to load.
+> [!IMPORTANT]
+> You must add `-insecure` to Counter-Strike's launch options for this plugin to load.
 
 ## Supported games
 
@@ -37,8 +38,9 @@ A Source 2 plugin to reveal all console variables and commands that are marked a
    		Game	core
    ```
 
-1. **Start the game from Steam.** \
-   ⚠ Counter-Strike must be launched with `-insecure` in the launch options. If you don't know how to do this, take a look this [Steam Community guide](https://steamcommunity.com/sharedfiles/filedetails/?id=379782151).
+1. **Start the game from Steam.**
+   > [!WARNING]
+   > Counter-Strike must be launched with `-insecure` in the launch options. If you don't know how to do this, take a look this [Steam Community guide](https://steamcommunity.com/sharedfiles/filedetails/?id=379782151).
 
 If you want to disable cvar-unhide-s2:
 
