@@ -6,6 +6,7 @@ ICvar* g_pCVar = NULL;
 CreateInterfaceFn g_pfnServerCreateInterface = NULL;
 
 extern ConCommand cvar_unhide;
+extern ConCommand cvarlist_md;
 
 typedef bool (*AppSystemConnectFn)(IAppSystem* appSystem, CreateInterfaceFn factory);
 static AppSystemConnectFn g_pfnServerConfigConnect = NULL;
@@ -16,6 +17,7 @@ bool Connect(IAppSystem* appSystem, CreateInterfaceFn factory)
 
 	g_pCVar = (ICvar*)factory("VEngineCvar007", NULL);
 	g_pCVar->RegisterConCommand(&cvar_unhide);
+	g_pCVar->RegisterConCommand(&cvarlist_md);
 
 	return result;
 }
@@ -29,7 +31,7 @@ DLL_EXPORT void* CreateInterface(const char* pName, int* pReturnCode)
 		auto insecure = CommandLine()->HasParm("-insecure");
 		if (!insecure)
 		{
-			Plat_FatalErrorFunc("Refusing to load in secure mode.\n\nAdd -insecure to Counter-Strike's launch options and restart the game.");
+			Plat_FatalErrorFunc("Refusing to load cvar-unhide-s2 in secure mode.\n\nAdd -insecure to Counter-Strike's launch options and restart the game.");
 		}
 
 		// Generate the path to the real server.dll

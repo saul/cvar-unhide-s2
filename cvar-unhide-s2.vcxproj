@@ -13,6 +13,9 @@
   <ItemGroup>
     <ClCompile Include="cvars.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="sdk\tier1\characterset.cpp" />
+    <ClCompile Include="sdk\tier1\convar.cpp" />
+    <ClCompile Include="sdk\tier1\strtools.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FE68CE13-526B-48C8-825C-F3BC64959AA4}</ProjectGuid>
@@ -80,7 +83,7 @@
       <AdditionalLibraryDirectories>sdk/lib/public/win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
-      <AdditionalDependencies>tier0.lib;tier1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>tier0.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -107,7 +110,7 @@
       <AdditionalLibraryDirectories>sdk/lib/public/win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
-      <AdditionalDependencies>tier0.lib;tier1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>tier0.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
