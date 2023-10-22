@@ -229,20 +229,30 @@ static void cvarlist_md_callback(const CCommand& args)
 {
 	std::map<std::string, ConEntry_t> allEntries;
 
-	auto handle = g_pCVar->FindFirstCommand();
-	while (handle.IsValid())
+	ConCommandHandle cmdHandle{};
+	auto invalidConcmd = g_pCVar->GetCommand(cmdHandle);
+	int cmdIdx = 0;
+	for (;;)
 	{
-		auto concmd = g_pCVar->GetCommand(handle);
+		cmdHandle.Set(cmdIdx++);
+		auto concmd = g_pCVar->GetCommand(cmdHandle);
+		if (concmd == invalidConcmd)
+			break;
+
 		allEntries[concmd->GetName()] = ConEntry_t(concmd->GetName(), nullptr, EConVarType_Invalid, concmd->GetFlags(), concmd->GetHelpText());
-		handle = g_pCVar->FindNextCommand(handle);
 	}
 
-	auto cvarHandle = g_pCVar->FindFirstConVar();
-	while (cvarHandle.IsValid())
+	ConVarHandle cvarHandle{};
+	auto invalidCvar = g_pCVar->GetConVar(cvarHandle);
+	int cvarIdx = 0;
+	for (;;)
 	{
+		cvarHandle.Set(cvarIdx++);
 		auto convar = g_pCVar->GetConVar(cvarHandle);
+		if (convar == invalidCvar)
+			break;
+
 		allEntries[convar->m_pszName] = ConEntry_t(convar->m_pszName, convar->m_cvvDefaultValue, convar->m_eVarType, convar->flags, convar->m_pszHelpString);
-		cvarHandle = g_pCVar->FindNextConVar(cvarHandle);
 	}
 
 	auto bShowHidden = !V_stricmp(args.Arg(1), "hidden");
