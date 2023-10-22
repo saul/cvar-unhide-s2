@@ -52,3 +52,4 @@ If you want to disable cvar-unhide-s2:
 If you installed the plugin correctly, you should now be able to use the following commands in the console:
 
 - **cvar_unhide**: Reveal all hidden/development-only convars/concommands.
+- **cvarlist_md**: Write all concmds/cvars to a `cvarlist.md` file in the `csgo` game directory. See [cvarlist.md](./cvarlist.md) for example output.
