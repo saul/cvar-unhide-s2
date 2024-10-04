@@ -13,9 +13,8 @@
   <ItemGroup>
     <ClCompile Include="cvars.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="sdk\tier1\characterset.cpp" />
     <ClCompile Include="sdk\tier1\convar.cpp" />
-    <ClCompile Include="sdk\tier1\strtools.cpp" />
+    <ClCompile Include="sdk\tier1\generichash.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FE68CE13-526B-48C8-825C-F3BC64959AA4}</ProjectGuid>
@@ -27,13 +26,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>

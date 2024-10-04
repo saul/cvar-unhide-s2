@@ -27,10 +27,7 @@
     <ClCompile Include="sdk\tier1\convar.cpp">
       <Filter>Tier1 Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sdk\tier1\strtools.cpp">
-      <Filter>Tier1 Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="sdk\tier1\characterset.cpp">
+    <ClCompile Include="sdk\tier1\generichash.cpp">
       <Filter>Tier1 Source Files</Filter>
     </ClCompile>
   </ItemGroup>
