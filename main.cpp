@@ -16,8 +16,7 @@ bool Connect(IAppSystem* appSystem, CreateInterfaceFn factory)
 	auto result = g_pfnServerConfigConnect(appSystem, factory);
 
 	g_pCVar = (ICvar*)factory("VEngineCvar007", NULL);
-	g_pCVar->RegisterConCommand(&cvar_unhide);
-	g_pCVar->RegisterConCommand(&cvarlist_md);
+	ConVar_Register();
 
 	return result;
 }
